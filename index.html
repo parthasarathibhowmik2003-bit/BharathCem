@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BharathCem – India's Trusted Cement Since 1958</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            geist: ['Geist', 'sans-serif'],
+            playfair: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            cream: '#FDFCF8',
+            forest: '#1A3C34',
+            cement: {
+              50: '#f7f6f4',
+              100: '#eeede8',
+              200: '#dddad0',
+              300: '#c7c1b0',
+              400: '#afa588',
+              500: '#9d9173',
+              600: '#8e7f63',
+              700: '#756854',
+              800: '#615747',
+              900: '#51493d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #FDFCF8; }
+    ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+    html { scroll-behavior: smooth; }
+
+    .hero-gradient {
+      background: linear-gradient(to bottom, rgb(0 0 0 / 0.3), transparent, rgb(0 0 0 / 0.45));
+    }
+    .stat-gradient {
+      background: linear-gradient(to top, rgb(26 60 52 / 0.92), rgb(26 60 52 / 0.7));
+    }
+    .marquee-track {
+      display: flex;
+      animation: marquee 30s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .dot-pattern {
+      background-image: radial-gradient(#1a3c34 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.06;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .product-card:hover .product-img {
+      transform: scale(1.05);
+    }
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+  </style>
+</head>
+<body class="bg-cream text-stone-800 font-sans antialiased">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 h-20 bg-cream/80 backdrop-blur-md border-b border-stone-200/50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto h-full px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-forest rounded-lg flex items-center justify-center">
+          <iconify-icon icon="lucide:building-2" class="text-white text-xl"></iconify-icon>
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-semibold text-forest tracking-tight">BharathCem</span>
+          <span class="block text-[9px] uppercase tracking-[0.25em] text-stone-400 -mt-1">Since 1958</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-xs font-medium tracking-wide text-stone-500 hover:text-forest transition-colors duration-300">About</a>
+        <a href="#products" class="text-xs font-medium tracking-wide text-stone-500 hover:text-forest transition-colors duration-300">Products</a>
+        <a href="#projects" class="text-xs font-medium tracking-wide text-stone-500 hover:text-forest transition-colors duration-300">Projects</a>
+        <a href="#sustainability" class="text-xs font-medium tracking-wide text-stone-500 hover:text-forest transition-colors duration-300">Sustainability</a>
+        <a href="#contact" class="text-xs font-medium tracking-wide text-stone-500 hover:text-forest transition-colors duration-300">Contact</a>
+        <a href="#contact" class="ml-4 inline-flex items-center gap-2 bg-forest text-cream text-xs font-semibold tracking-wide px-5 py-2.5 rounded-full hover:bg-forest/85 transition-colors duration-300">
+          Get a Quote
+          <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="menuToggle" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-stone-200 hover:bg-stone-100 transition-colors">
+        <iconify-icon icon="lucide:menu" class="text-xl text-forest" id="menuIcon"></iconify-icon>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu md:hidden bg-cream/95 backdrop-blur-md border-b border-stone-200/50" id="mobileMenu">
+      <div class="px-6 py-6 flex flex-col gap-4">
+        <a href="#about" class="text-sm font-medium text-stone-600 hover:text-forest transition-colors mobile-link">About</a>
+        <a href="#products" class="text-sm font-medium text-stone-600 hover:text-forest transition-colors mobile-link">Products</a>
+        <a href="#projects" class="text-sm font-medium text-stone-600 hover:text-forest transition-colors mobile-link">Projects</a>
+        <a href="#sustainability" class="text-sm font-medium text-stone-600 hover:text-forest transition-colors mobile-link">Sustainability</a>
+        <a href="#contact" class="text-sm font-medium text-stone-600 hover:text-forest transition-colors mobile-link">Contact</a>
+        <a href="#contact" class="mt-2 inline-flex items-center justify-center gap-2 bg-forest text-cream text-xs font-semibold tracking-wide px-5 py-3 rounded-full">
+          Get a Quote
+          <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ===== HERO ===== -->
+  <section class="relative h-screen flex flex-col justify-end overflow-hidden">
+    <img src="https://picsum.photos/seed/cement-factory-india/1920/1080.jpg" alt="Cement plant in India" class="absolute inset-0 w-full h-full object-cover" style="opacity: 0.85; transform: scale(1.05);">
+    <div class="hero-gradient absolute inset-0"></div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-7xl mx-auto w-full px-6 pb-16 md:pb-24">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-white/90 font-medium">Trusted by 50,000+ Builders Across India</span>
+        </div>
+        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-medium text-white leading-[0.85] tracking-tighter mb-6">
+          Building<br>
+          <span class="italic text-white/80">India's</span><br>
+          Foundation
+        </h1>
+        <p class="text-sm md:text-base text-white/70 max-w-md leading-relaxed font-light mb-8">
+          Premium quality cement manufactured with cutting-edge technology. From homes to highways — strength you can trust.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#products" class="inline-flex items-center gap-2 bg-white text-forest text-xs font-semibold tracking-wide px-7 py-3.5 rounded-full hover:bg-stone-100 transition-colors duration-300">
+            Explore Products
+            <iconify-icon icon="lucide:arrow-down-right" class="text-base"></iconify-icon>
+          </a>
+          <a href="#about" class="inline-flex items-center gap-2 border border-white/30 text-white text-xs font-semibold tracking-wide px-7 py-3.5 rounded-full hover:bg-white/10 transition-colors duration-300">
+            Our Story
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+      <span class="text-[9px] uppercase tracking-[0.2em] text-white/50">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-white/50 to-transparent"></div>
+    </div>
+  </section>
+
+
+  <!-- ===== MARQUEE BANNER ===== -->
+  <div class="bg-forest py-3 overflow-hidden">
+    <div class="marquee-track">
+      <div class="flex items-center gap-8 px-4 shrink-0">
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:award" class="text-green-400"></iconify-icon> IS 269 Certified
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:shield-check" class="text-green-400"></iconify-icon> BIS Approved
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:leaf" class="text-green-400"></iconify-icon> Green Pro Certified
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:factory" class="text-green-400"></iconify-icon> 12 Manufacturing Plants
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:truck" class="text-green-400"></iconify-icon> 10,000+ Dealers Network
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:globe" class="text-green-400"></iconify-icon> Exporting to 18 Countries
+        </span>
+        <span class="text-white/30">✦</span>
+      </div>
+      <div class="flex items-center gap-8 px-4 shrink-0">
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:award" class="text-green-400"></iconify-icon> IS 269 Certified
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:shield-check" class="text-green-400"></iconify-icon> BIS Approved
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:leaf" class="text-green-400"></iconify-icon> Green Pro Certified
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:factory" class="text-green-400"></iconify-icon> 12 Manufacturing Plants
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:truck" class="text-green-400"></iconify-icon> 10,000+ Dealers Network
+        </span>
+        <span class="text-white/30">✦</span>
+        <span class="text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium flex items-center gap-2">
+          <iconify-icon icon="lucide:globe" class="text-green-400"></iconify-icon> Exporting to 18 Countries
+        </span>
+        <span class="text-white/30">✦</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <!-- Image -->
+        <div class="relative fade-in">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+            <img src="https://picsum.photos/seed/cement-industry-worker/800/1000.jpg" alt="Cement manufacturing" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+          </div>
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-6 -right-4 md:-right-8 bg-forest text-white rounded-2xl p-6 shadow-lg">
+            <span class="font-serif text-4xl font-semibold block">66+</span>
+            <span class="text-[10px] uppercase tracking-[0.15em] text-white/70">Years of<br>Excellence</span>
+          </div>
+          <!-- Dot Pattern Overlay -->
+          <div class="absolute -top-8 -left-8 w-40 h-40 dot-pattern rounded-full"></div>
+        </div>
+
+        <!-- Text -->
+        <div class="fade-in">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-forest font-semibold">Our Legacy</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-medium leading-[0.9] tracking-tight mt-3 mb-6">
+            From a single<br>kiln to a <span class="italic text-forest">nationwide</span><br>legacy
+          </h2>
+          <p class="text-sm text-stone-500 leading-relaxed mb-6">
+            Founded in 1958 in Rajasthan, BharathCem began as a modest cement plant with a vision to support India's growing infrastructure needs. Today, we operate 12 state-of-the-art manufacturing facilities across 8 states, producing over 40 million tonnes of cement annually.
+          </p>
+          <p class="text-sm text-stone-500 leading-relaxed mb-8">
+            Our commitment to quality, innovation, and sustainability has made us the preferred choice for India's most ambitious construction projects — from the Mumbai Coastal Road to the Delhi-Mumbai Expressway.
+          </p>
+          
+          <!-- Key Points -->
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-forest/10 flex items-center justify-center shrink-0 mt-0.5">
+                <iconify-icon icon="lucide:check" class="text-forest text-sm"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-stone-800 block">53 Grade OPC</span>
+                <span class="text-[11px] text-stone-400">IS 269:2015</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-forest/10 flex items-center justify-center shrink-0 mt-0.5">
+                <iconify-icon icon="lucide:check" class="text-forest text-sm"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-stone-800 block">PPC Blend</span>
+                <span class="text-[11px] text-stone-400">IS 1489:2015</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-forest/10 flex items-center justify-center shrink-0 mt-0.5">
+                <iconify-icon icon="lucide:check" class="text-forest text-sm"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-stone-800 block">PSC Grade</span>
+                <span class="text-[11px] text-stone-400">IS 455:2015</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-forest/10 flex items-center justify-center shrink-0 mt-0.5">
+                <iconify-icon icon="lucide:check" class="text-forest text-sm"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-stone-800 block">White Cement</span>
+                <span class="text-[11px] text-stone-400">IS 8042:1989</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="inline-flex items-center gap-2 text-forest text-xs font-semibold tracking-wide hover:gap-3 transition-all duration-300">
+            Learn Our Full Story
+            <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== STATS ===== -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <img src="https://picsum.photos/seed/construction-site-aerial/1920/800.jpg" alt="Construction site" class="absolute inset-0 w-full h-full object-cover" style="filter: grayscale(40%) brightness(0.6);">
+    <div class="stat-gradient absolute inset-0"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div class="text-center fade-in">
+          <span class="font-serif text-4xl md:text-5xl font-semibold text-white block" data-count="40">0</span>
+          <span class="text-[10px] uppercase tracking-[0.15em] text-white/60 mt-2 block">Million Tonnes / Year</span>
+        </div>
+        <div class="text-center fade-in">
+          <span class="font-serif text-4xl md:text-5xl font-semibold text-white block" data-count="12">0</span>
+          <span class="text-[10px] uppercase tracking-[0.15em] text-white/60 mt-2 block">Manufacturing Plants</span>
+        </div>
+        <div class="text-center fade-in">
+          <span class="font-serif text-4xl md:text-5xl font-semibold text-white block" data-count="10000">0</span>
+          <span class="text-[10px] uppercase tracking-[0.15em] text-white/60 mt-2 block">Dealer Network</span>
+        </div>
+        <div class="text-center fade-in">
+          <span class="font-serif text-4xl md:text-5xl font-semibold text-white block" data-count="18">0</span>
+          <span class="text-[10px] uppercase tracking-[0.15em] text-white/60 mt-2 block">Export Countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== PRODUCTS ===== -->
+  <section id="products" class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-forest font-semibold">Product Range</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-medium leading-[0.9] tracking-tight mt-3 mb-5">
+          Engineered for <span class="italic">every</span> build
+        </h2>
+        <p class="text-sm text-stone-500 leading-relaxed">
+          Whether you're building a dream home, a commercial complex, or a national highway — we have the right cement for your project.
+        </p>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Product 1 -->
+        <div class="product-card group bg-cream rounded-2xl overflow-hidden border border-stone-200/50 hover:shadow-lg transition-shadow duration-500 fade-in">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="https://picsum.photos/seed/opp-cement-bag/600/450.jpg" alt="BharathCem OPC 53" class="product-img w-full h-full object-cover transition-transform duration-700">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[9px] uppercase tracking-[0.15em] bg-forest/10 text-forest font-semibold px-2.5 py-1 rounded-full">Best Seller</span>
+              <span class="text-[9px] uppercase tracking-[0.15em] bg-amber-50 text-amber-700 font-semibold px-2.5 py-1 rounded-full">53 Grade</span>
+            </div>
+            <h3 class="font-serif text-2xl font-medium tracking-tight mb-2">BharathCem OPC 53</h3>
+            <p class="text-xs text-stone-500 leading-relaxed mb-4">
+              Ultra-high strength Ordinary Portland Cement ideal for RCC structures, bridges, high-rise buildings, and pre-cast elements.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3 text-[10px] text-stone-400 uppercase tracking-wider">
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:flask-conical" class="text-xs"></iconify-icon> 53 MPa</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:clock" class="text-xs"></iconify-icon> 30 min set</span>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1 text-forest text-xs font-semibold hover:gap-2 transition-all duration-300">
+                Details <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card group bg-cream rounded-2xl overflow-hidden border border-stone-200/50 hover:shadow-lg transition-shadow duration-500 fade-in">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="https://picsum.photos/seed/ppc-cement-mix/600/450.jpg" alt="BharathCem PPC" class="product-img w-full h-full object-cover transition-transform duration-700">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[9px] uppercase tracking-[0.15em] bg-green-50 text-green-700 font-semibold px-2.5 py-1 rounded-full">Eco-Friendly</span>
+              <span class="text-[9px] uppercase tracking-[0.15em] bg-blue-50 text-blue-700 font-semibold px-2.5 py-1 rounded-full">43 Grade</span>
+            </div>
+            <h3 class="font-serif text-2xl font-medium tracking-tight mb-2">BharathCem PPC</h3>
+            <p class="text-xs text-stone-500 leading-relaxed mb-4">
+              Portland Pozzolana Cement with fly ash blend for superior durability, reduced heat of hydration, and enhanced resistance to chemical attacks.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3 text-[10px] text-stone-400 uppercase tracking-wider">
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:flask-conical" class="text-xs"></iconify-icon> 43 MPa</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:droplets" class="text-xs"></iconify-icon> Low Heat</span>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1 text-forest text-xs font-semibold hover:gap-2 transition-all duration-300">
+                Details <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card group bg-cream rounded-2xl overflow-hidden border border-stone-200/50 hover:shadow-lg transition-shadow duration-500 fade-in">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="https://picsum.photos/seed/white-cement-tile/600/450.jpg" alt="BharathCem White" class="product-img w-full h-full object-cover transition-transform duration-700">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[9px] uppercase tracking-[0.15em] bg-purple-50 text-purple-700 font-semibold px-2.5 py-1 rounded-full">Premium</span>
+              <span class="text-[9px] uppercase tracking-[0.15em] bg-stone-100 text-stone-600 font-semibold px-2.5 py-1 rounded-full">White Cement</span>
+            </div>
+            <h3 class="font-serif text-2xl font-medium tracking-tight mb-2">BharathCem White</h3>
+            <p class="text-xs text-stone-500 leading-relaxed mb-4">
+              Premium white cement for architectural finishes, decorative concrete, terrazzo flooring, mosaic tiles, and aesthetic wall plasters.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3 text-[10px] text-stone-400 uppercase tracking-wider">
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:sun" class="text-xs"></iconify-icon> UV Stable</span>
+                <span class="flex items-center gap-1"><iconify-icon icon="lucide:sparkles" class="text-xs"></iconify-icon> 90%+ Whiteness</span>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1 text-forest text-xs font-semibold hover:gap-2 transition-all duration-300">
+                Details <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More Products Row -->
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="product-card group bg-cream rounded-2xl overflow-hidden border border-stone-200/50 hover:shadow-lg transition-shadow duration-500 fade-in">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden">
+              <img src="https://picsum.photos/seed/psc-cement-dam/400/400.jpg" alt="BharathCem PSC" class="product-img w-full h-full object-cover transition-transform duration-700">
+            </div>
+            <div class="p-6 flex-1">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-[9px] uppercase tracking-[0.15em] bg-cyan-50 text-cyan-700 font-semibold px-2.5 py-1 rounded-full">Marine Grade</span>
+              </div>
+              <h3 class="font-serif text-xl font-medium tracking-tight mb-2">BharathCem PSC</h3>
+              <p class="text-xs text-stone-500 leading-relaxed mb-3">
+                Portland Slag Cement for mass concrete pours, dams, marine structures, and foundations exposed to sulphate and chloride environments.
+              </p>
+              <a href="#" class="inline-flex items-center gap-1 text-forest text-xs font-semibold hover:gap-2 transition-all duration-300">
+                Details <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card group bg-cream rounded-2xl overflow-hidden border border-stone-200/50 hover:shadow-lg transition-shadow duration-500 fade-in">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden">
+              <img src="https://picsum.photos/seed/ready-mix-concrete-truck/400/400.jpg" alt="BharathCem RMC" class="product-img w-full h-full object-cover transition-transform duration-700">
+            </div>
+            <div class="p-6 flex-1">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-[9px] uppercase tracking-[0.15em] bg-orange-50 text-orange-700 font-semibold px-2.5 py-1 rounded-full">Ready Mix</span>
+              </div>
+              <h3 class="font-serif text-xl font-medium tracking-tight mb-2">BharathCem RMC</h3>
+              <p class="text-xs text-stone-500 leading-relaxed mb-3">
+                Ready-Mix Concrete delivered to your site with precise mix design, consistent quality, and on-time scheduling for projects of any scale.
+              </p>
+              <a href="#" class="inline-flex items-center gap-1 text-forest text-xs font-semibold hover:gap-2 transition-all duration-300">
+                Details <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="py-24 md:py-32 bg-cream relative overflow-hidden">
+    <div class="absolute inset-0 dot-pattern"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <!-- Left -->
+        <div class="fade-in">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-forest font-semibold">Why BharathCem</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-medium leading-[0.9] tracking-tight mt-3 mb-6">
+            The <span class="italic">BharathCem</span><br>advantage
+          </h2>
+          <p class="text-sm text-stone-500 leading-relaxed mb-8">
+            Every bag of BharathCem carries decades of research, stringent quality control, and a deep understanding of India's diverse construction needs.
+          </p>
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="https://picsum.photos/seed/cement-lab-testing/700/525.jpg" alt="Quality testing lab" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+
+        <!-- Right - Features -->
+        <div class="space-y-6">
+          <div class="bg-white rounded-2xl p-6 border border-stone-200/50 hover:shadow-md transition-shadow duration-500 fade-in">
+            <div class="w-12 h-12 rounded-xl bg-forest/10 flex items-center justify-center mb-4">
+              <iconify-icon icon="lucide:flask-conical" class="text-forest text-xl"></iconify-icon>
+            </div>
+            <h3 class="font-serif text-xl font-medium tracking-tight mb-2">200+ Quality Tests</h3>
+            <p class="text-xs text-stone-500 leading-relaxed">
+              Every batch undergoes over 200 quality parameters — from raw material analysis to final pack testing. Our NABL-accredited labs ensure zero compromise.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-stone-200/50 hover:shadow-md transition-shadow duration-500 fade-in">
+            <div class="w-12 h-12 rounded-xl bg-forest/10 flex items-center justify-center mb-4">
+              <iconify-icon icon="lucide:zap" class="text-forest text-xl"></iconify-icon>
+            </div>
+            <h3 class="font-serif text-xl font-medium tracking-tight mb-2">Early Strength Gain</h3>
+            <p class="text-xs text-stone-500 leading-relaxed">
+              Our proprietary clinker composition delivers 30% higher early strength compared to standard cement, enabling faster de-shuttering and project cycles.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-stone-200/50 hover:shadow-md transition-shadow duration-500 fade-in">
+            <div class="w-12 h-12 rounded-xl bg-forest/10 flex items-center justify-center mb-4">
+              <iconify-icon icon="lucide:shield-check" class="text-forest text-xl"></iconify-icon>
+            </div>
+            <h3 class="font-serif text-xl font-medium tracking-tight mb-2">Superior Durability</h3>
+            <p class="text-xs text-stone-500 leading-relaxed">
+              Enhanced resistance to sulphate attack, chloride ingress, and alkali-silica reaction. Buildings that stand strong for 100+ years.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-stone-200/50 hover:shadow-md transition-shadow duration-500 fade-in">
+            <div class="w-12 h-12 rounded-xl bg-forest/10 flex items-center justify-center mb-4">
+              <iconify-icon icon="lucide:truck" class="text-forest text-xl"></iconify-icon>
+            </div>
+            <h3 class="font-serif text-xl font-medium tracking-tight mb-2">Pan-India Delivery</h3>
+            <p class="text-xs text-stone-500 leading-relaxed">
+              With 10,000+ dealers and 50+ dispatch centres, we ensure cement reaches your site within 24–48 hours anywhere in India.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 fade-in">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-forest font-semibold">Landmark Projects</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-medium leading-[0.9] tracking-tight mt-3">
+            Powering India's <span class="italic">iconic</span> builds
+          </h2>
+        </div>
+        <a href="#" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-forest text-xs font-semibold tracking-wide hover:gap-3 transition-all duration-300">
+          View All Projects
+          <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden fade-in cursor-pointer">
+          <img src="https://picsum.photos/seed/metro-bridge-india/600/800.jpg" alt="Mumbai Coastal Road" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <span class="text-[9px] uppercase tracking-[0.15em] text-white/60 font-medium">Infrastructure</span>
+            <h3 class="font-serif text-2xl text-white font-medium mt-1">Mumbai Coastal Road</h3>
+            <p class="text-xs text-white/60 mt-2">Used 2.8 lakh tonnes of BharathCem OPC 53 for the sea-wall and tunnel segments.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden fade-in cursor-pointer">
+          <img src="https://picsum.photos/seed/skyscraper-india-new/600/800.jpg" alt="Hyderabad Skyline" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <span class="text-[9px] uppercase tracking-[0.15em] text-white/60 font-medium">Commercial</span>
+            <h3 class="font-serif text-2xl text-white font-medium mt-1">Hyderabad IT Corridor</h3>
+            <p class="text-xs text-white/60 mt-2">Preferred cement partner for 15+ IT parks and commercial towers in HITEC City.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden fade-in cursor-pointer">
+          <img src="https://picsum.photos/seed/highway-express-india/600/800.jpg" alt="Expressway" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <span class="text-[9px] uppercase tracking-[0.15em] text-white/60 font-medium">Highways</span>
+            <h3 class="font-serif text-2xl text-white font-medium mt-1">Delhi-Mumbai Expressway</h3>
+            <p class="text-xs text-white/60 mt-2">Supplied 5.2 lakh tonnes of PSC for rigid pavement across 3 packages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== SUSTAINABILITY ===== -->
+  <section id="sustainability" class="py-24 md:py-32 bg-forest relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+      <div class="absolute inset-0 dot-pattern"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Text -->
+        <div class="fade-in">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-green-400 font-semibold">Sustainability</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-medium leading-[0.9] tracking-tight mt-3 mb-6 text-white">
+            Building greener,<br><span class="italic text-white/70">for generations</span>
+          </h2>
+          <p class="text-sm text-white/60 leading-relaxed mb-8">
+            We're committed to reducing our carbon footprint through waste heat recovery, alternate fuel usage, and green manufacturing processes. Our goal: net-zero carbon emissions by 2040.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div>
+              <span class="font-serif text-3xl font-semibold text-white block">32%</span>
+              <span class="text-[10px] uppercase tracking-[0.15em] text-white/50">Carbon Reduced Since 2010</span>
+            </div>
+            <div>
+              <span class="font-serif text-3xl font-semibold text-white block">18%</span>
+              <span class="text-[10px] uppercase tracking-[0.15em] text-white/50">Alternate Fuel Usage</span>
+            </div>
+            <div>
+              <span class="font-serif text-3xl font-semibold text-white block">100%</span>
+              <span class="text-[10px] uppercase tracking-[0.15em] text-white/50">Water Recycled at Plants</span>
+            </div>
+            <div>
+              <span class="font-serif text-3xl font-semibold text-white block">5x</span>
+              <span class="text-[10px] uppercase tracking-[0.15em] text-white/50">Tree Planting Target</span>
+            </div>
+          </div>
+
+          <a href="#" class="inline-flex items-center gap-2 bg-white text-forest text-xs font-semibold tracking-wide px-7 py-3.5 rounded-full hover:bg-stone-100 transition-colors duration-300">
+            Read ESG Report 2024
+            <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="relative fade-in">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+            <img src="https://picsum.photos/seed/green-cement-plant-solar/800/1000.jpg" alt="Green cement plant with solar panels" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -top-4 -left-4 bg-green-500 text-white rounded-xl p-4 shadow-lg">
+            <iconify-icon icon="lucide:leaf" class="text-2xl"></iconify-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="py-24 md:py-32 bg-cream">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-forest font-semibold">Testimonials</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-medium leading-[0.9] tracking-tight mt-3">
+          Trusted by India's <span class="italic">top</span> builders
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="bg-white rounded-2xl p-6 border border-stone-200/50 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+          </div>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6 italic">
+            "We've been using BharathCem OPC 53 for all our high-rise projects in Pune. The consistency in strength and setting time is unmatched. It has reduced our project timelines by 15%."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-forest/10 flex items-center justify-center">
+              <span class="font-serif text-sm font-semibold text-forest">RK</span>
+            </div>
+            <div>
+              <span class="text-xs font-semibold text-stone-800 block">Rajesh Kulkarni</span>
+              <span class="text-[10px] text-stone-400">Director, Kulkarni Constructions, Pune</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white rounded-2xl p-6 border border-stone-200/50 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+          </div>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6 italic">
+            "For our government housing projects across Tamil Nadu, BharathCem PPC gives us the perfect balance of strength, workability, and cost-effectiveness. Their dealer network ensures timely supply."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-forest/10 flex items-center justify-center">
+              <span class="font-serif text-sm font-semibold text-forest">PS</span>
+            </div>
+            <div>
+              <span class="text-xs font-semibold text-stone-800 block">Priya Subramaniam</span>
+              <span class="text-[10px] text-stone-400">CEO, Subramaniam Infrastructure, Chennai</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white rounded-2xl p-6 border border-stone-200/50 fade-in">
+          <div class="flex items-center gap-1 mb-4">
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+            <iconify-icon icon="lucide:star" class="text-amber-400 text-sm" style="--iconify-stroke-width: 0;"></iconify-icon>
+          </div>
+          <p class="text-sm text-stone-600 leading-relaxed mb-6 italic">
+            "Even individual home builders trust BharathCem. I built my house in Lucknow with their cement — the finish was excellent, and the mason specifically asked for BharathCem by name."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-forest/10 flex items-center justify-center">
+              <span class="font-serif text-sm font-semibold text-forest">AG</span>
+            </div>
+            <div>
+              <span class="text-xs font-semibold text-stone-800 block">Amit Gupta</span>
+              <span class="text-[10px] text-stone-400">Homeowner, Lucknow, UP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== PRESENCE MAP / STATES ===== -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-forest font-semibold">Our Presence</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-medium leading-[0.9] tracking-tight mt-3 mb-5">
+          Across <span class="italic">India</span>
+        </h2>
+        <p class="text-sm text-stone-500 leading-relaxed">
+          From Kutch to Kolkata, Jammu to Kochi — BharathCem is available in every corner of India.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 fade-in">
+        <div class="bg-cream rounded-xl p-4 text-center border border-stone-200/50 hover:border-forest/30 hover:shadow-sm transition-all duration-300">
+          <iconify-icon icon="lucide:factory" class="text-forest text-lg mb-2"></iconify-icon>
+          <span class="text-xs font-semibold text-stone-700 block">Rajasthan</span>
+          <span class="text-[10px] text-stone-400">3 Plants</span>
+        </div>
+        <div class="bg-cream rounded-xl p-4 text-center border border-stone-200/50 hover:border-forest/30 hover:shadow-sm transition-all duration-300">
+          <iconify-icon icon="lucide:factory" class="text-forest text-lg mb-2"></iconify-icon>
+          <span class="text-xs font-semibold text-stone-700 block">Madhya Pradesh</span>
+          <span class="text-[10px] text-stone-400">2 Plants</span>
+        </div>
+        <div class="bg-cream rounded-xl p-4 text-center border border-stone-200/50 hover:border-forest/30 hover:shadow-sm transition-all duration-300">
+          <iconify-icon icon="lucide:factory" class="text-forest text-lg mb-2"></iconify-icon>
+          <span class="text-xs font-semibold text-stone-700 block">Chhattisgarh</span>
+          <span class="text-[10px] text-stone-400">2 Plants</span>
+        </div>
+        <div class="bg-cream rounded-xl p-4 text-center border border-stone-200/50 hover:border-forest/30 hover:shadow-sm transition-all duration-300">
+          <iconify-icon icon="lucide:factory" class="text-forest text-lg mb-2"></iconify-icon>
+          <span class="text-xs font-semibold text-stone-700 block">Tamil Nadu</span>
+          <span class="text-[10px] text-stone-400">1 Plant</span>
+        </div>
+        <div class="bg-cream rounded-xl p-4 text-center border border-stone-200/50 hover:border-forest/30 hover:shadow-sm transition-all duration-300">
+          <iconify-icon icon="lucide:factory" class="text-forest text-lg mb-2"></iconify-icon>
+          <span class="text-xs font-semibold text-stone-700 block">Karnataka</span>
+          <span class="text-[10px] text-stone-400">1 Plant</span>
+        </div>
+        <div class="bg-cream rounded-xl p-4 text-center border border-stone-200/50 hover:border-forest/30 hover:shadow-sm transition-all duration-300">
+          <iconify-icon icon="lucide:factory" class="text-forest text-lg mb-2"></iconify-icon>
+          <span class="text-xs font-semibold text-stone-700 block">Andhra Pradesh</span>
+          <span class="text-[10px] text-stone-400">1 Plant</span>
+        </div>
+        <div class="bg-cream rounded-xl p-4 text-center border border-stone-200/50 hover:border-forest/30 hover:shadow-sm transition-all duration-300">
+          <iconify-icon icon="lucide:factory" class="text-forest text-lg mb-2"></iconify-icon>
+          <span class="text-xs font-semibold text-stone-700 block">Maharashtra</span>
+          <span class="text-[10px] text-stone-400">1 Plant</span>
+        </div>
+        <div class="bg-cream rounded-xl p-4 text-center border border-stone-200/50 hover:border-forest/30 hover:shadow-sm transition-all duration-300">
+          <iconify-icon icon="lucide:factory" class="text-forest text-lg mb-2"></iconify-icon>
+          <span class="text-xs font-semibold text-stone-700 block">West Bengal</span>
+          <span class="text-[10px] text-stone-400">1 Plant</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== CTA / CONTACT ===== -->
+  <section id="contact" class="py-24 md:py-32 bg-cream relative overflow-hidden">
+    <div class="absolute inset-0 dot-pattern"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-20">
+        <!-- Left -->
+        <div class="fade-in">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-forest font-semibold">Get in Touch</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-medium leading-[0.9] tracking-tight mt-3 mb-6">
+            Let's build<br><span class="italic">something</span> great
+          </h2>
+          <p class="text-sm text-stone-500 leading-relaxed mb-8">
+            Whether you're a contractor planning a large project or a homeowner starting your dream house — our team is here to help you choose the right cement and ensure timely delivery.
+          </p>
+
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-forest/10 flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:phone" class="text-forest"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-stone-800 block">Toll-Free Number</span>
+                <span class="text-sm text-stone-500">1800-123-4BCE (4223)</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-forest/10 flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:mail" class="text-forest"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-stone-800 block">Email</span>
+                <span class="text-sm text-stone-500">sales@bharathcem.in</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-forest/10 flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:map-pin" class="text-forest"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-stone-800 block">Corporate Office</span>
+                <span class="text-sm text-stone-500">BharathCem Bhawan, MI Road, Jaipur, Rajasthan 302001</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right - Form -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 border border-stone-200/50 shadow-sm fade-in">
+          <h3 class="font-serif text-2xl font-medium tracking-tight mb-6">Request a Quote</h3>
+          <form id="quoteForm" class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="text-[10px] uppercase tracking-[0.1em] text-stone-400 font-medium block mb-1.5">Full Name *</label>
+                <input type="text" required class="w-full bg-cream border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-forest/50 focus:ring-1 focus:ring-forest/20 transition-colors" placeholder="Your name">
+              </div>
+              <div>
+                <label class="text-[10px] uppercase tracking-[0.1em] text-stone-400 font-medium block mb-1.5">Phone *</label>
+                <input type="tel" required class="w-full bg-cream border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-forest/50 focus:ring-1 focus:ring-forest/20 transition-colors" placeholder="+91 98765 43210">
+              </div>
+            </div>
+            <div>
+              <label class="text-[10px] uppercase tracking-[0.1em] text-stone-400 font-medium block mb-1.5">Email</label>
+              <input type="email" class="w-full bg-cream border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-forest/50 focus:ring-1 focus:ring-forest/20 transition-colors" placeholder="you@example.com">
+            </div>
+            <div>
+              <label class="text-[10px] uppercase tracking-[0.1em] text-stone-400 font-medium block mb-1.5">Product Interest *</label>
+              <select required class="w-full bg-cream border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-800 focus:outline-none focus:border-forest/50 focus:ring-1 focus:ring-forest/20 transition-colors appearance-none" style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2378716c%22 stroke-width=%222%22%3E%3Cpolyline points=%226 9 12 15 18 9%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 16px center;">
+                <option value="">Select a product</option>
+                <option>BharathCem OPC 53</option>
+                <option>BharathCem PPC</option>
+                <option>BharathCem PSC</option>
+                <option>BharathCem White</option>
+                <option>BharathCem RMC</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[10px] uppercase tracking-[0.1em] text-stone-400 font-medium block mb-1.5">Quantity (Bags / Tonnes)</label>
+              <input type="text" class="w-full bg-cream border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-forest/50 focus:ring-1 focus:ring-forest/20 transition-colors" placeholder="e.g., 500 bags or 25 tonnes">
+            </div>
+            <div>
+              <label class="text-[10px] uppercase tracking-[0.1em] text-stone-400 font-medium block mb-1.5">Project Location</label>
+              <input type="text" class="w-full bg-cream border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-forest/50 focus:ring-1 focus:ring-forest/20 transition-colors" placeholder="City, State">
+            </div>
+            <div>
+              <label class="text-[10px] uppercase tracking-[0.1em] text-stone-400 font-medium block mb-1.5">Message</label>
+              <textarea rows="3" class="w-full bg-cream border border-stone-200 rounded-lg px-4 py-2.5 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-forest/50 focus:ring-1 focus:ring-forest/20 transition-colors resize-none" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <button type="submit" class="w-full bg-forest text-cream text-xs font-semibold tracking-wide py-3.5 rounded-full hover:bg-forest/85 transition-colors duration-300 flex items-center justify-center gap-2">
+              Submit Quote Request
+              <iconify-icon icon="lucide:arrow-right" class="text-sm"></iconify-icon>
+            </button>
+            <div id="formMessage" class="hidden text-center text-xs py-2 rounded-lg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-stone-900 text-white">
+    <!-- Main Footer -->
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+      <div class="grid md:grid-cols-4 gap-10 md:gap-12">
+        <!-- Brand -->
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-9 h-9 bg-forest rounded-lg flex items-center justify-center">
+              <iconify-icon icon="lucide:building-2" class="text-white text-lg"></iconify-icon>
+            </div>
+            <span class="font-serif text-xl font-semibold tracking-tight">BharathCem</span>
+          </div>
+          <p class="text-xs text-stone-400 leading-relaxed mb-5">
+            India's most trusted cement brand since 1958. Building the nation's future with strength, quality, and sustainability.
+          </p>
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-forest flex items-center justify-center transition-colors duration-300">
+              <iconify-icon icon="lucide:facebook" class="text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-forest flex items-center justify-center transition-colors duration-300">
+              <iconify-icon icon="lucide:twitter" class="text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-forest flex items-center justify-center transition-colors duration-300">
+              <iconify-icon icon="lucide:instagram" class="text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-forest flex items-center justify-center transition-colors duration-300">
+              <iconify-icon icon="lucide:youtube" class="text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-forest flex items-center justify-center transition-colors duration-300">
+              <iconify-icon icon="lucide:linkedin" class="text-sm"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+        <!-- Products -->
+        <div>
+          <h4 class="text-[10px] uppercase tracking-[0.15em] font-semibold text-white/50 mb-5">Products</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">OPC 53 Grade</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">PPC (Fly Ash Based)</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">PSC (Slag Based)</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">White Cement</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Ready-Mix Concrete</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Dry Mortar Mixes</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="text-[10px] uppercase tracking-[0.15em] font-semibold text-white/50 mb-5">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Leadership</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Manufacturing</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Sustainability</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Investor Relations</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h4 class="text-[10px] uppercase tracking-[0.15em] font-semibold text-white/50 mb-5">Support</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Find a Dealer</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Technical Support</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Bulk Orders</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Complaints</a></li>
+            <li><a href="#" class="text-xs text-stone-400 hover:text-white transition-colors">Download Brochure</a></li>
+            <li>
+              <a href="tel:18001234223" class="text-xs text-green-400 hover:text-green-300 transition-colors font-medium flex items-center gap-1">
+                <iconify-icon icon="lucide:phone" class="text-xs"></iconify-icon>
+                1800-123-4BCE
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications Bar -->
+    <div class="border-t border-stone-800">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex flex-wrap items-center justify-center gap-6 md:gap-10">
+        <span class="text-[9px] uppercase tracking-[0.15em] text-stone-500 font-medium">Certifications:</span>
+        <span class="text-[10px] text-stone-400 flex items-center gap-1.5"><iconify-icon icon="lucide:shield-check" class="text-green-500"></iconify-icon> BIS Certified</span>
+        <span class="text-[10px] text-stone-400 flex items-center gap-1.5"><iconify-icon icon="lucide:award" class="text-green-500"></iconify-icon> ISO 9001:2015</span>
+        <span class="text-[10px] text-stone-400 flex items-center gap-1.5"><iconify-icon icon="lucide:leaf" class="text-green-500"></iconify-icon> ISO 14001:2015</span>
+        <span class="text-[10px] text-stone-400 flex items-center gap-1.5"><iconify-icon icon="lucide:shield" class="text-green-500"></iconify-icon> ISO 45001:2018</span>
+        <span class="text-[10px] text-stone-400 flex items-center gap-1.5"><iconify-icon icon="lucide:zap" class="text-green-500"></iconify-icon> GreenPro Certified</span>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-stone-800">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <span class="text-[10px] text-stone-500">© 2024 BharathCem Ltd. All rights reserved. CIN: L26942RJ1958PLC001234</span>
+        <div class="flex items-center gap-5">
+          <a href="#" class="text-[10px] text-stone-500 hover:text-stone-300 transition-colors">Privacy Policy</a>
+          <a href="#" class="text-[10px] text-stone-500 hover:text-stone-300 transition-colors">Terms of Use</a>
+          <a href="#" class="text-[10px] text-stone-500 hover:text-stone-300 transition-colors">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="backToTop" class="fixed bottom-6 right-6 z-40 w-10 h-10 bg-forest text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-forest/85">
+    <iconify-icon icon="lucide:arrow-up" class="text-lg"></iconify-icon>
+  </button>
+
+
+  <script>
+    // ===== Mobile Menu Toggle =====
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      menuIcon.setAttribute('icon', menuOpen ? 'lucide:x' : 'lucide:menu');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        menuIcon.setAttribute('icon', 'lucide:menu');
+      });
+    });
+
+    // ===== Navbar Scroll Effect =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.classList.add('shadow-sm');
+        navbar.style.backgroundColor = 'rgba(253, 252, 248, 0.95)';
+      } else {
+        navbar.classList.remove('shadow-sm');
+        navbar.style.backgroundColor = 'rgba(253, 252, 248, 0.8)';
+      }
+    });
+
+    // ===== Back to Top =====
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        backToTop.classList.remove('opacity-0', 'pointer-events-none');
+        backToTop.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        backToTop.classList.add('opacity-0', 'pointer-events-none');
+        backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ===== Scroll Fade-In Animation =====
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 80);
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+
+    // ===== Counter Animation =====
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-count'));
+          const duration = 2000;
+          const start = performance.now();
+
+          function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(eased * target);
+
+            if (target >= 10000) {
+              el.textContent = current.toLocaleString('en-IN') + '+';
+            } else {
+              el.textContent = current + '+';
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            }
+          }
+          requestAnimationFrame(update);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => counterObserver.observe(el));
+
+    // ===== Form Submission =====
+    const quoteForm = document.getElementById('quoteForm');
+    const formMessage = document.getElementById('formMessage');
+
+    quoteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Show success message
+      formMessage.classList.remove('hidden', 'bg-red-50', 'text-red-600');
+      formMessage.classList.add('bg-green-50', 'text-green-700');
+      formMessage.innerHTML = '<span class="flex items-center justify-center gap-1"><iconify-icon icon="lucide:check-circle" class="text-sm"></iconify-icon> Thank you! Our team will contact you within 24 hours.</span>';
+      
+      // Reset form
+      quoteForm.reset();
+
+      // Hide message after 5s
+      setTimeout(() => {
+        formMessage.classList.add('hidden');
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
